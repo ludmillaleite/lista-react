@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "email": "burgerstation.com.br",
+      "senha": "072825"
+    }
+  ],
+  "lanches": [
+    {
+      "nome": "CHEDDAR A VAPOR",
+      "categorias": [
+        "frango"
+      ],
+      "descricao": "Pão com gergelim, dois frangos, molho cremoso sabor queijo cheddar, maionese e alface.",
+      "imagens": [
+        "card_de_frango.png"
+      ],
+      "id": "f1",
+      "preco": 45.89,
+      "peso": null
+    },
+    {
+      "nome": "EXPRESSO DUO",
+      "categorias": [
+        "frango"
+      ],
+      "descricao": "Um suculento hambúrguer de frango, alface, tomate e um delicioso molho furioso de alho.",
+      "imagens": [
+        "card_de_frango2.png"
+      ],
+      "id": "f2",
+      "preco": 46.99,
+      "peso": null
+    },
+    {
+      "nome": "PLATAFORMA CHICKEN",
+      "categorias": [
+        "frango"
+      ],
+      "descricao": "Um delicioso e suculento filé de frango crocante, maionese e alface.",
+      "imagens": [
+        "card_de_frango3.png"
+      ],
+      "id": "f3",
+      "preco": 43.39,
+      "peso": null
+    },
+    {
+      "nome": "COMBO FERROVIA",
+      "categorias": [
+        "frango",
+        "combo"
+      ],
+      "descricao": "Maionese, alface, tomate, cebola, ketchup, picles e fritas.",
+      "imagens": [
+        "transferir.png"
+      ],
+      "id": "f4",
+      "preco": 58.7,
+      "peso": null
+    }
+  ]
+}
