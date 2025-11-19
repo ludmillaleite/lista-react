@@ -1,14 +1,14 @@
 import './Produtos.css';
- //import card_de_frango from '../../assets/card frango 5.png'
- //import card_de_frango2 from '../../assets/card frango 2.png'
- //import card_de_frango3 from '../../assets/card frango 3.png'
- //import transferir from '../../assets/transferir (3) 1.png'
+//import card_de_frango from '../../assets/card frango 5.png'
+//import card_de_frango2 from '../../assets/card frango 2.png'
+//import card_de_frango3 from '../../assets/card frango 3.png'
+//import transferir from '../../assets/transferir (3) 1.png'
 import whatsapp from '../../assets/Ícone Whatsapp Menu.png';
-import etiqueta from '../../assets/etiqueta frango.png';
 import logo from '../../assets/inicio.png';
 import { useEffect, useState } from 'react';
 import type { Lanche } from '../../types/Lanche';
 import { getLanche } from '../../services/lanchesService';
+import CardProduto from '../../components/CardProduto/CardProduto';
 
 
 
@@ -33,33 +33,31 @@ export default function Produtos() {
         fetchLanche();
     }, [])
 
-return( 
-<main className="iconedefundo_cardapio"> 
+    return (
+        <main className="iconedefundo_cardapio">
 
-        <section>
-            <div>
-                <img className= {logo} src="../Menu/assets/Logo Menu.png" alt=""/>
-            </div>
-        </section>
+            <section>
+                <div>
+                    <img className={logo} src="../Menu/assets/Logo Menu.png" alt="" />
+                </div>
+            </section>
 
-        <h1>LANCHES DE FRANGO</h1>
+            <h1>LANCHES DE FRANGO</h1>
 
-        <section className="cards">
+            <section className="cards">
+                {
+                    lanche.map((lanche: Lanche) => {
+                        return (
+                            <CardProduto
+                                nome={lanche.nome}
+                                descricao={lanche.descricao}
+                                preco={lanche.preco}
+                                imagem={lanche.imagens[0] ?? ""} />
+                        );
+                    })
+                }
 
-            
-                    {
-                        lanche.map((lanche: Lanche) => (
-                            <div className="card_produto">
-                                <img src={`http://localhost:3000/static/${lanche.imagens[0]}`} alt="Pão com gergelim, dois frangos, molho cremoso sabor queijo cheddar, maionese e alface" />
-                                <h2>{lanche.nome}</h2>
-                                <p>{lanche.descricao}</p>
-                                <img src={etiqueta} alt="" />
-                                <span>{lanche.preco}</span>
-                            </div>
-                        ))
-                    }
-
-            {/* <section className="container">
+                {/* <section className="container">
                 <div className="sessao_card1">
                     <div className="div_img">
                         <img src= {card_de_frango} alt=""/>
@@ -105,16 +103,16 @@ return(
                     </div>
                 </div>
             </section> */}
-        </section>
+            </section>
 
-        <section>
-            <a className="whatsaap" href="">
-                <img src= {whatsapp} alt=""/>
-            </a>
+            <section>
+                <a className="whatsaap" href="">
+                    <img src={whatsapp} alt="" />
+                </a>
 
 
-        </section>
+            </section>
 
-    </main>
+        </main>
     )
 }

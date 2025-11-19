@@ -42,21 +42,20 @@
         "card_de_frango3.png"
       ],
       "id": "f3",
-      "preco": 43.39,
+      "preco": 43.99,
       "peso": null
     },
     {
       "nome": "COMBO FERROVIA",
       "categorias": [
-        "frango",
-        "combo"
+        "frango"
       ],
       "descricao": "Maionese, alface, tomate, cebola, ketchup, picles e fritas.",
       "imagens": [
         "transferir.png"
       ],
       "id": "f4",
-      "preco": 58.7,
+      "preco": 58.79,
       "peso": null
     }
   ]
