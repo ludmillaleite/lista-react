@@ -49,6 +49,7 @@ export default function Produtos() {
                     lanche.map((lanche: Lanche) => {
                         return (
                             <CardProduto
+                                key={lanche.id}
                                 nome={lanche.nome}
                                 descricao={lanche.descricao}
                                 preco={lanche.preco}
