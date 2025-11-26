@@ -9,6 +9,9 @@ import { useEffect, useState } from 'react';
 import type { Lanche } from '../../types/Lanche';
 import { getLanche } from '../../services/lanchesService';
 import CardProduto from '../../components/CardProduto/CardProduto';
+import Carrossel from '../../components/Carrossel/Carrossel';
+import Header from '../../components/Header/Header';
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -18,31 +21,60 @@ export default function Produtos() {
 
     const [lanche, setLanche] = useState<Lanche[]>([]);
     // o state é sempre formado por um par
+    const location = useLocation();
+
+    const parametrosPesquisados = new URLSearchParams(location.search);
+    const termo_pesquisado = parametrosPesquisados.get('query');
+
 
     const fetchLanche = async () => {
         try {
             const dados = await getLanche();
-            console.log("Dados retornados da API: ", dados);
+            // console.log("Dados retornados da API: ", dados);
+
+            if (termo_pesquisado) {
+                const dados_filtrados = dados.filter(l => 
+                    l.nome.toLowerCase().includes(termo_pesquisado.toLowerCase()) ||
+                    l.descricao.toLowerCase().includes(termo_pesquisado.toLowerCase()) ||
+                    l.categorias.some(cat => cat.toLowerCase().includes(termo_pesquisado.toLowerCase())) 
+                );
+                setLanche(dados_filtrados);
+            }else
             setLanche(dados);
         } catch (error) {
-            console.error("Erro ao excutar getLanche: ", error)
+            console.error("Erro ao excutar getLanche: ", error);
         }
     }
 
     useEffect(() => {
         fetchLanche();
-    }, [])
+        console.log("Termo pesquisado: ", termo_pesquisado);
+
+    }, [termo_pesquisado])
 
     return (
+        <>
+            <Header/>
         <main className="iconedefundo_cardapio">
+            
+            <Carrossel/>
 
-            <section>
+                    <h1 className="acessivel">lanches de frango</h1>
+                    <div className="titulo">
+                        <span>
+                            {
+                            termo_pesquisado ? `Resultados para: ${termo_pesquisado}` : "Nome da categoria"
+                            }
+                        </span>
+                        <hr />
+                    </div>
+            {/* <section>
                 <div>
                     <img className={logo} src="../Menu/assets/Logo Menu.png" alt="" />
                 </div>
             </section>
 
-            <h1>LANCHES DE FRANGO</h1>
+            <h1>LANCHES DE FRANGO</h1> */}
 
             <section className="cards">
                 {
@@ -58,52 +90,9 @@ export default function Produtos() {
                     })
                 }
 
-                {/* <section className="container">
-                <div className="sessao_card1">
-                    <div className="div_img">
-                        <img src= {card_de_frango} alt=""/>
-                    </div>
-                    <div className="descricao">
-                        <h2>CHEDDAR A VAPOR </h2>
-                        <p> Pão com gergelim, dois frangos, molho cremoso sabor queijo cheddar, maionese e alface</p>
-                        <span> R$ 45,80</span>
-                    </div>
-                </div>
+
+
                 
-                <div className="sessao_card2">
-                    <div className="div_img">
-                        <img src= {card_de_frango2} alt=""/>
-                    </div>
-                    <div className="descricao">
-                        <h2>EXPRESSO DUO </h2>
-                        <p> Um suculento hambúrguer de frango, alface, tomate e um delicioso molho furioso de alho.
-                        </p>
-                        <span> R$46,99</span>
-                    </div>
-                </div>
-
-                <div className="sessao_card3">
-                    <div className="div_img">
-                        <img src={card_de_frango3} alt=""/>
-                    </div>
-                    <div className="descricao">
-                        <h2>PLATAFORMA CHICKEN </h2>
-                        <p> Um delicioso e suculento filé de frango crocante, maionese e alface.</p>
-                        <span> R$43,30</span>
-                    </div>
-                </div>
-
-                <div className="sessao_card4">
-                    <div className="div_img">
-                        <img src= {transferir} alt=""/>
-                    </div>
-                    <div className="descricao">
-                        <h2>COMBO FERROVIA</h2>
-                        <p> Maionese, alface, tomate, cebola, ketchup, picles e fritas</p>
-                        <span> R$58,70 </span>
-                    </div>
-                </div>
-            </section> */}
             </section>
 
             <section>
@@ -115,5 +104,6 @@ export default function Produtos() {
             </section>
 
         </main>
+            </>
     )
 }

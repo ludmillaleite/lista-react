@@ -1,0 +1,85 @@
+header {
+    background-color: #EB7932;
+    /* height: 100px; */
+
+}
+
+.iconedefundo_cardapio {
+    background-image: url("../../assets/Fundo\ do\ Layout.png");
+}
+
+.container_cabecalho{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    align-items: center;
+}
+
+.conteudo-nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icone_inicio {
+    padding: 0px 0px;
+    margin: 24px 0;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    color: black;
+    z-index: 2;
+}
+
+.img_logo {
+    height: 85px;
+    width: 70px;
+    margin: 24px 0;
+    /* margin-left: 12px; */
+}
+
+.box_busca{
+    position: relative;
+    width: 60%;
+    max-width: 500px;
+    margin: 0 10px;
+}
+
+.campo_busca{
+     width: 100%;
+    height: 42px;
+    border-radius: 10px;
+    border: solid 1px #cccccc;
+    padding-left: 2.5rem;
+    font-size: 1rem;
+}
+
+.icone_lupa{
+    height: 24px;
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    fill: #b0b0b0;
+}
+
+.img_fundo {
+    width: 1943px;
+    height: 849px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .me-auto {
+        align-items: end;
+    }
+    .img_logo {
+        margin: 1rem 0 1rem 0;
+    }
+    .icone_inicio{
+        margin-bottom: 5px;
+    }
+}
