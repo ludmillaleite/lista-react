@@ -4,7 +4,7 @@ import './Produtos.css';
 //import card_de_frango3 from '../../assets/card frango 3.png'
 //import transferir from '../../assets/transferir (3) 1.png'
 import whatsapp from '../../assets/Ícone Whatsapp Menu.png';
-import logo from '../../assets/inicio.png';
+// import logo from '../../assets/inicio.png';
 import { useEffect, useState } from 'react';
 import type { Lanche } from '../../types/Lanche';
 import { getLanche } from '../../services/lanchesService';

@@ -30,11 +30,12 @@ p {
     border-radius: 30px;
     padding: 30px 10px;
     margin-bottom: 133px;
-    margin-right: 60px;
+    margin-right: 10px;
+    margin-left: 10px;
 
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 5%;
     justify-content: space-between;
     align-items: center;
@@ -77,5 +78,5 @@ span{
     margin-bottom: 10px;
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 0 112px;
+    padding: 0 93px;
 }
