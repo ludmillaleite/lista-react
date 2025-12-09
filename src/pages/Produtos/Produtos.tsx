@@ -11,7 +11,7 @@ import { getLanche } from '../../services/lanchesService';
 import CardProduto from '../../components/CardProduto/CardProduto';
 import Carrossel from '../../components/Carrossel/Carrossel';
 import Header from '../../components/Header/Header';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 
 
@@ -22,6 +22,7 @@ export default function Produtos() {
     const [lanche, setLanche] = useState<Lanche[]>([]);
     // o state é sempre formado por um par
     const location = useLocation();
+    const { categoria } = useParams<{ categoria: string }>();
 
     const parametrosPesquisados = new URLSearchParams(location.search);
     const termo_pesquisado = parametrosPesquisados.get('query');
@@ -31,16 +32,21 @@ export default function Produtos() {
         try {
             const dados = await getLanche();
             // console.log("Dados retornados da API: ", dados);
-
-            if (termo_pesquisado) {
-                const dados_filtrados = dados.filter(l => 
-                    l.nome.toLowerCase().includes(termo_pesquisado.toLowerCase()) ||
-                    l.descricao.toLowerCase().includes(termo_pesquisado.toLowerCase()) ||
-                    l.categorias.some(cat => cat.toLowerCase().includes(termo_pesquisado.toLowerCase())) 
+            if (categoria) {
+                const dados_filtrados = dados.filter(b => b.categorias.some(cat => cat.toLowerCase() === categoria.toLowerCase()));
+                setLanche(dados_filtrados);
+            }
+            else if (termo_pesquisado) {
+                const dados_filtrados = dados.filter(b => 
+                    b.nome.toLowerCase().includes(termo_pesquisado.toLowerCase()) ||
+                    b.descricao.toLowerCase().includes(termo_pesquisado.toLowerCase()) ||
+                    b.categorias.some(cat => cat.toLowerCase().includes(termo_pesquisado.toLowerCase()))      
                 );
                 setLanche(dados_filtrados);
-            }else
-            setLanche(dados);
+            } else{
+                console.warn("Nenhuma categoria ou termo de busca definidos.");
+                setLanche([]);
+            }
         } catch (error) {
             console.error("Erro ao excutar getLanche: ", error);
         }
@@ -54,21 +60,21 @@ export default function Produtos() {
 
     return (
         <>
-            <Header/>
-        <main className="iconedefundo_cardapio">
-            
-            <Carrossel/>
+            <Header />
+            <Carrossel />
+            <main className="iconedefundo_cardapio">
 
-                    <h1 className="acessivel">lanches de frango</h1>
-                    <div className="titulo">
-                        <span>
-                            {
+
+                <h1 className="acessivel">lanches de frango</h1>
+                <div className="titulo">
+                    <span>
+                        {
                             termo_pesquisado ? `Resultados para: ${termo_pesquisado}` : "Nome da categoria"
-                            }
-                        </span>
-                        <hr />
-                    </div>
-            {/* <section>
+                        }
+                    </span>
+                    <hr />
+                </div>
+                {/* <section>
                 <div>
                     <img className={logo} src="../Menu/assets/Logo Menu.png" alt="" />
                 </div>
@@ -76,34 +82,34 @@ export default function Produtos() {
 
             <h1>LANCHES DE FRANGO</h1> */}
 
-            <section className="cards">
-                {
-                    lanche.map((lanche: Lanche) => {
-                        return (
-                            <CardProduto
-                                key={lanche.id}
-                                nome={lanche.nome}
-                                descricao={lanche.descricao}
-                                preco={lanche.preco}
-                                imagem={lanche.imagens[0] ?? ""} />
-                        );
-                    })
-                }
+                <section className="cards">
+                    {
+                        lanche.map((lanche: Lanche) => {
+                            return (
+                                <CardProduto
+                                    key={lanche.id}
+                                    nome={lanche.nome}
+                                    descricao={lanche.descricao}
+                                    preco={lanche.preco}
+                                    imagem={lanche.imagens[0] ?? ""} />
+                            );
+                        })
+                    }
 
 
 
-                
-            </section>
 
-            <section>
-                <a className="whatsaap" href="">
-                    <img src={whatsapp} alt="" />
-                </a>
+                </section>
+
+                <section>
+                    <a className="whatsaap" href="">
+                        <img src={whatsapp} alt="" />
+                    </a>
 
 
-            </section>
+                </section>
 
-        </main>
-            </>
+            </main>
+        </>
     )
 }

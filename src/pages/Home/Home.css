@@ -37,11 +37,11 @@ header {
 }
 
 .img_logo{
-    height: 165px;
-    width: 150px;
+    height: 105px;
+    width: 90px;
     position: absolute;
-    left: 40px;
-    top: 116px;
+    left: 25px;
+    top: 0px;
 }
 
 .banners{
@@ -61,7 +61,7 @@ header {
     gap: 10%;
 }
 
-.card{
+.card_categoria{
     margin: 50px 0;
     height: 360px;
     text-decoration: none;
@@ -126,6 +126,7 @@ footer p{
     font-family: "Italiana", sans-serif;
     text-align: center;
     font-size: 36px;
+    background-color: #EB7932;
 }
 
 /*MEDIA*/

@@ -1,6 +1,8 @@
 import banner_1 from '../../assets/Banner1.png'
 import banner_2 from '../../assets/Banner2.png'
 import banner_3 from '../../assets/Banner1.png'
+import banner_4 from '../../assets/Banner4atualizado.png'
+import banner_5 from '../../assets/Banner5.jpg'
 
 
 export default function Carrossel() {
@@ -15,6 +17,12 @@ export default function Carrossel() {
         </div>
         <div className="carousel-item">
           <img src={banner_3} className="d-block w-100" alt="..." />
+        </div>
+        <div className="carousel-item">
+          <img src={banner_4} className="d-block w-100" alt="..." />
+        </div>
+        <div className="carousel-item">
+          <img src={banner_5} className="d-block w-100" alt="..." />
         </div>
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
