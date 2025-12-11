@@ -6,6 +6,7 @@ import { categorias } from '../../data/categorias';
 import type { CardCategoriaProps } from '../../types/CardCategoriaProps';
 import CardCategoria from '../../components/CardCategoria/CardCategoria';
 import Carrossel from '../../components/Carrossel/Carrossel';
+import Footer from '../../components/Footer/Footer';
 
 export default function Home() {
     return (
@@ -45,10 +46,7 @@ export default function Home() {
                     <img src={whatsapp} alt="icone do whatsapp" />
                 </Link>
             </main>
-
-            <footer className="rodape">
-                <p>ONDE CADA MORDIDA É UMA VIAGEM DE SABOR - BURGER STATION</p>
-            </footer>
+            <Footer/>
 
         </>
     )

@@ -61,6 +61,17 @@ h2 {
     margin-top: -10px;
 }
 
+/* .bs404{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+}
+
+.bs404 img{
+    height: 200px;
+} */
+
 .titulo {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,15 @@
+footer{
+    background-color: #EB7932;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     font-family: "Italiana", sans-serif;
+}
+
+footer p{
+    font-family: "Italiana", sans-serif;
+    text-align: center;
+    font-size: 36px;
+    background-color: #EB7932;
+}

@@ -3,7 +3,7 @@ import icone_inicio from '../../assets/inicio.png';
 import img_logo from '../../assets/Logo Menu.png';
 import { Nav, Navbar } from 'react-bootstrap';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -31,7 +31,9 @@ export default function Header() {
 
                         {/* 1/3: Icone Logo */}
                         <Nav.Item>
+                            <Link to={"/"} title='Ir para a página inicial'>
                             <img className="img_logo" src={img_logo} />
+                            </Link>
                         </Nav.Item>
 
                         {/* 2/3: Barra pesquisa Central */}
@@ -54,7 +56,9 @@ export default function Header() {
 
                         {/* 3/3: Icone Inicio */}
                         <Nav.Item>
+                            <Link to={"/produtos/cadaastro"} title='Cadastrar produtos'>
                       <img className="icone_inicio" src={icone_inicio} />
+                            </Link>
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>

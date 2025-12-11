@@ -12,6 +12,8 @@ import CardProduto from '../../components/CardProduto/CardProduto';
 import Carrossel from '../../components/Carrossel/Carrossel';
 import Header from '../../components/Header/Header';
 import { useLocation, useParams } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
+import bs404 from '../../assets/Item não encontrado.png'
 
 
 
@@ -33,14 +35,14 @@ export default function Produtos() {
             const dados = await getLanche();
             // console.log("Dados retornados da API: ", dados);
             if (categoria) {
-                const dados_filtrados = dados.filter(b => b.categorias.some(cat => cat.toLowerCase() === categoria.toLowerCase()));
+                const dados_filtrados = dados.filter(l => l.categorias.some(cat => cat.toLowerCase() === categoria.toLowerCase()));
                 setLanche(dados_filtrados);
             }
             else if (termo_pesquisado) {
-                const dados_filtrados = dados.filter(b => 
-                    b.nome.toLowerCase().includes(termo_pesquisado.toLowerCase()) ||
-                    b.descricao.toLowerCase().includes(termo_pesquisado.toLowerCase()) ||
-                    b.categorias.some(cat => cat.toLowerCase().includes(termo_pesquisado.toLowerCase()))      
+                const dados_filtrados = dados.filter(l => 
+                    l.nome.toLowerCase().includes(termo_pesquisado.toLowerCase()) ||
+                    l.descricao.toLowerCase().includes(termo_pesquisado.toLowerCase()) ||
+                    l.categorias.some(cat => cat.toLowerCase().includes(termo_pesquisado.toLowerCase()))      
                 );
                 setLanche(dados_filtrados);
             } else{
@@ -69,7 +71,11 @@ export default function Produtos() {
                 <div className="titulo">
                     <span>
                         {
-                            termo_pesquisado ? `Resultados para: ${termo_pesquisado}` : "Nome da categoria"
+                            categoria
+                            ? categoria.charAt(0).toUpperCase() + categoria.slice(1).toLowerCase()
+                            : termo_pesquisado
+                            ? `Resultados para: "${termo_pesquisado}"`
+                            : "Nenhum filtro aplicado"
                         }
                     </span>
                     <hr />
@@ -95,6 +101,12 @@ export default function Produtos() {
                             );
                         })
                     }
+                    {
+                        lanche.length == 0 &&
+                        <div className='bs404' ><h3>O termo pesquisado<br /> não foi encontrado</h3>
+                        <img src={bs404} alt="foto_termo_nao_encontrado" />
+                        </div>
+                    }
 
 
 
@@ -110,6 +122,7 @@ export default function Produtos() {
                 </section>
 
             </main>
+            <Footer />
         </>
     )
 }
