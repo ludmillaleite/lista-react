@@ -107,7 +107,7 @@ export default function Cadastro() {
             limparDados();
             fetchLanches();
         } catch {
-            exibirModalDeErroOuSucesso ("Erro", "Erro ao cadastrar novo lanche.");
+            exibirModalDeErroOuSucesso("Erro", "Erro ao cadastrar novo lanche.");
         }
     };
 
@@ -148,43 +148,43 @@ export default function Cadastro() {
                             <div className="linha1">
                                 <div>
                                     <label htmlFor="prod">Lanche</label>
-                                    <input className="linhas_1e2" 
-                                    type="text"
-                                    id=""
-                                    placeholder="Insira o nome do lanche" 
-                                    value={nomeLanche}
-                                    onChange={c => setCategorias(c.target.value)}> 
+                                    <input className="linhas_1e2"
+                                        type="text"
+                                        id="prod"
+                                        placeholder="Insira o nome do lanche"
+                                        value={nomeLanche}
+                                        onChange={c => setCategorias(c.target.value)}>
                                     </input>
                                 </div>
 
                                 <div className='valor'>
                                     <label htmlFor="val">Valor</label>
-                                <NumericFormat
-                                id="valor"
-                                placeholder="Insira o preço (R$)"
-                                value={preco ?? ""}
-                                thousandSeparator="."
-                                decimalSeparator=","
-                                prefix='R$ '
-                                decimalScale={2}
-                                fixedDecimalScale
-                                allowNegative={false}
-                                onValueChange={(values) => {
-                                    setPreco(values.floatValue ?? undefined);
-                                }}
-                                inputMode="decimal"
-                                />
+                                    <NumericFormat
+                                        id="valor"
+                                        placeholder="Insira o preço (R$)"
+                                        value={preco ?? ""}
+                                        thousandSeparator="."
+                                        decimalSeparator=","
+                                        prefix='R$ '
+                                        decimalScale={2}
+                                        fixedDecimalScale
+                                        allowNegative={false}
+                                        onValueChange={(values) => {
+                                            setPreco(values.floatValue ?? undefined);
+                                        }}
+                                        inputMode="decimal"
+                                    />
                                 </div>
 
                                 <div className="categoria-div">
                                     <div className="categoria">
                                         <label htmlFor="cat">Categoria</label>
-                                        <input className="linhas_1e2" 
-                                        type="text"
-                                        id="cat"
-                                        placeholder="Frango, Vegetariano, Carne..." 
-                                        value={categorias}
-                                        onChange={c => setCategorias(c.target.value)} 
+                                        <input className="linhas_1e2"
+                                            type="text"
+                                            id="cat"
+                                            placeholder="Frango, Vegetariano, Carne..."
+                                            value={categorias}
+                                            onChange={c => setCategorias(c.target.value)}
                                         />
                                     </div>
                                     <div>
@@ -198,17 +198,17 @@ export default function Cadastro() {
 
                             <div className="img">
                                 <label htmlFor="img">
-                                <span>Imagem</span>
-                                <div style={{ backgroundColor: bgImagemInputColor}} >
-                                img???
-                                </div>
+                                    <span>Imagem</span>
+                                    <div style={{ backgroundColor: bgImagemInputColor }} >
+                                        img???
+                                    </div>
                                 </label>
                                 <input
-                                type="file"
-                                id="img"
-                                alt="imagem_do_lanche"
-                                accept="image/*"
-                                onChange={carregarImagem}
+                                    type="file"
+                                    id="img"
+                                    alt="imagem_do_lanche"
+                                    accept="image/*"
+                                    onChange={carregarImagem}
                                 />
                             </div>
 
@@ -217,13 +217,13 @@ export default function Cadastro() {
                                 <div className="cadastro_coluna2">
                                     <label className="Descricaotexto" htmlFor="desc">Descrição</label>
                                     <textarea
-                                    id="desc"
-                                    maxLength={200}
-                                    placeholder="Escreva detalhes sobre o lanche"
-                                    value={descricao}
-                                    onChange={d => setDescricao(d.target.value)}
+                                        id="desc"
+                                        maxLength={200}
+                                        placeholder="Escreva detalhes sobre o lanche"
+                                        value={descricao}
+                                        onChange={d => setDescricao(d.target.value)}
                                     />
-                                    
+
                                 </div>
                                 {/* <div className="botaodeconfirmar">
                                     <button className="botao" type="submit">
