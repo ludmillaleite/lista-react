@@ -8,7 +8,7 @@ export default function CardProduto( {nome, descricao, preco, imagem, id}: CardP
   return (
     <div key={id} className="card_produto">
             <img src={(imagem.length > 0) ? `http://localhost:3000/static/${imagem}` : lanche_default} alt="Pão com gergelim, dois frangos, molho cremoso sabor queijo cheddar, maionese e alface" />
-            <h2>{nome}</h2>
+            <h2 className='nome_produto_'>{nome}</h2>
             <p>{(descricao.length > 0) ? descricao : "Descrição não informada"}</p>
             <span>{ formatosService.PrecoBR(preco) }</span><br/> 
     </div>

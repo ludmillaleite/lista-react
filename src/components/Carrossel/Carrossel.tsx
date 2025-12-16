@@ -1,8 +1,8 @@
-import banner_1 from '../../assets/Banner1.png'
-import banner_2 from '../../assets/Banner2.png'
-import banner_3 from '../../assets/Banner1.png'
-import banner_4 from '../../assets/Banner4atualizado.png'
-import banner_5 from '../../assets/Banner5.jpg'
+import banner_1 from '../../assets/Banner1atualizadook.png'
+import banner_2 from '../../assets/Banner2atualizadook.png'
+import banner_3 from '../../assets/Banner3atualizadook.png'
+import banner_4 from '../../assets/Banner4atualizadook.png'
+import banner_5 from '../../assets/Banner5atualizadook.png';
 
 
 export default function Carrossel() {

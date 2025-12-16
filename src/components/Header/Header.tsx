@@ -56,7 +56,7 @@ export default function Header() {
 
                         {/* 3/3: Icone Inicio */}
                         <Nav.Item>
-                            <Link to={"/produtos/cadaastro"} title='Cadastrar produtos'>
+                            <Link to={"/produtos/cadastro"} title='Cadastrar produtos'>
                       <img className="icone_inicio" src={icone_inicio} />
                             </Link>
                         </Nav.Item>

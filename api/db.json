@@ -7,19 +7,6 @@
   ],
   "lanches": [
     {
-      "nome": "CHEDDAR A VAPOR",
-      "categorias": [
-        "frango"
-      ],
-      "descricao": "Pão com gergelim, dois frangos, molho cremoso sabor queijo cheddar, maionese e alface.",
-      "imagens": [
-        "card_de_frango.png"
-      ],
-      "id": "f1",
-      "preco": 45.89,
-      "peso": null
-    },
-    {
       "nome": "EXPRESSO DUO",
       "categorias": [
         "frango"
@@ -57,6 +44,30 @@
       "id": "f4",
       "preco": 58.79,
       "peso": null
+    },
+    {
+      "nome": "Spice Garden",
+      "descricao": "Pão, hamburguer vegetal picante temperado com especiarias  servido com cebola roxa, alface e maionese da casa.",
+      "preco": 49.9,
+      "categorias": [
+        "carne"
+      ],
+      "imagens": [
+        "1765911769466.png"
+      ],
+      "id": "b89S2JW"
+    },
+    {
+      "nome": "fresh boost",
+      "descricao": "Hambúrguer vegetal leve com tomate marinado e maionese cítrica. Uma explosão de frescor",
+      "preco": 49.9,
+      "categorias": [
+        "vegetariano"
+      ],
+      "imagens": [
+        "1765911995716.png"
+      ],
+      "id": "wuV0YXe"
     }
   ]
 }
