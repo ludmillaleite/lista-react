@@ -172,7 +172,7 @@ export default function Cadastro() {
 
                                     <div className="img">
                                         <label htmlFor="img">
-                                            <span>Imagem</span>
+                                            <span className='img_span'>Imagem</span>
                                             <div style={{ backgroundColor: bgImagemInputColor }}>
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 448 512">

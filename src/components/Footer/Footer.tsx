@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <>
             <footer className="rodape">
-                <p>ONDE CADA MORDIDA É UMA VIAGEM DE SABOR - BURGER STATION</p>
+                <p>BURGER STATION - UMA VIAGEM DE SABOR A CADA MORDIDA</p>
             </footer>
 
         </>

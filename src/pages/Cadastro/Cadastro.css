@@ -5,8 +5,8 @@
   top: -20px;
 }
 
-.iconedefundo_menu{
-    background-image: url("../BurguerStation/assets/Fundo\ do\ Layout.png");
+.iconedefundo_menu {
+  background-image: url("../BurguerStation/assets/Fundo\ do\ Layout.png");
 }
 
 .container_lista,
@@ -25,10 +25,14 @@
 
 h2 {
   color: #000000;
-    font-size: 18px;
-    padding: 14px;
-    height: 50px;
-    border-radius: 10px;
+  font-size: 18px;
+  padding: 14px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.container_busca{
+  /* width: 100%; */
 }
 
 .Descricaotexto {
@@ -54,7 +58,7 @@ h2 {
 .box_cadastro {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   max-width: 1440px;
 }
 
@@ -80,6 +84,7 @@ h2 {
 
 .box_cadastro label {
   font-size: 20px;
+  font-weight: 600;
 }
 
 .box_cadastro input[type="text"],
@@ -99,15 +104,15 @@ h2 {
 .img {
   /* margin-left: -170px;
   margin-right: 50px; */
-  margin: 0px 140px 0 -148px;
+  /* margin: 0px 140px 0 -148px; */
 }
 
-span {
+.img_span {
   margin-left: -96px;
   font-size: 20px;
-    font-weight: 200;
-    margin-top: -60px;
-    margin-bottom: 10px;
+  font-weight: 600;
+  margin-top: -60px;
+  margin-bottom: 10px;
 }
 
 .valor_img {
@@ -136,6 +141,7 @@ span {
   background-color: var(--corPrincipal);
   box-shadow: 0 4px 4px 0 #00000025;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .img {
@@ -163,10 +169,13 @@ input[type="file"] {
 
 
 
+.iconedefundo_cadastro {
+  padding: 100px;
+  background-image: url("../../assets/Fundo\ do\ Layout.png");
+}
 
-
-Lista table {
-
+table {
+  margin-top: 100px;
   width: 90%;
   max-width: 1200px;
   text-align: center;
@@ -177,11 +186,13 @@ th {
   border-bottom: solid 2px var(--corPrincipal);
   padding: 0 3px 5px 3px;
   font-size: 18px;
+  font-weight: 900;
 }
 
 td {
   padding: 12px 16px 6px 16px;
   border-bottom: solid 2px #B3B3B350;
+  font-weight: 600;
 }
 
 table svg {
@@ -189,8 +200,8 @@ table svg {
   cursor: pointer;
 }
 
-footer{
-  margin-top: 60px;
+footer {
+  /* margin-top: 60px; */
 }
 
 /* MEDIA */
@@ -212,7 +223,7 @@ footer{
 
 
 
-  LISTA table {
+  table {
     text-align: left;
     max-width: 460px;
   }

@@ -69,7 +69,7 @@ export default function Produtos() {
 
                 <h1 className="acessivel">lanches de frango</h1>
                 <div className="titulo">
-                    <span>
+                    <span className='titulo_span'>
                         {
                             categoria
                             ? categoria.charAt(0).toUpperCase() + categoria.slice(1).toLowerCase()
@@ -114,7 +114,7 @@ export default function Produtos() {
                 </section>
 
                 <section>
-                    <a className="whatsaap" href="">
+                    <a className="whatsapp" href="">
                         <img src={whatsapp} alt="" />
                     </a>
 

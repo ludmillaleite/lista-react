@@ -8,8 +8,9 @@ footer{
 }
 
 footer p{
-    font-family: "Italiana", sans-serif;
+    font-family: "Moul", serif;
     text-align: center;
-    font-size: 36px;
+    font-size: 20px;
     background-color: #EB7932;
+    margin-bottom: 0;
 }

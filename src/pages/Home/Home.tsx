@@ -1,6 +1,6 @@
 import './Home.css';
 import whatsapp from "../../assets/Ícone Whatsapp Menu.png";
-import img_logo from "../../assets/Logo Menu.png";
+// import img_logo from "../../assets/Logo Menu.png";
 import { Link } from 'react-router-dom';
 import { categorias } from '../../data/categorias';
 import type { CardCategoriaProps } from '../../types/CardCategoriaProps';
@@ -12,10 +12,10 @@ export default function Home() {
     return (
         <>
             <Carrossel/>
-            <main className="iconedefundo_menu">
+            <main className="iconedefundo_menu_home">
                 <section>
                     <div>
-                        <img className="img_logo" src={img_logo} alt="logo" />
+                        {/* <img className="img_logo" src={img_logo} alt="logo" /> */}
                         {/* <img className="banners" src="../BurguerStation/assets/Group 5 (1).png" alt=""/>
                 <img className="banners" src="../BurguerStation/assets/Group 5 (1).png" alt=""/>
                 <img className="banners" src="../BurguerStation/assets/Group 5 (1).png" alt=""/> */}
@@ -24,7 +24,7 @@ export default function Home() {
                 </section>
 
 
-                <section className="secao_cards">
+                <section className="secao_cards_home">
 
                     <h1 className="acessível">Pagina inicial</h1>
                     {

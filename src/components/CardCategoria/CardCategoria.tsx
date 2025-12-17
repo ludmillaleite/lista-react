@@ -13,7 +13,7 @@ export default function CardCategoria({ rota, titulo, classeCss, svgIconeCategor
                 
                 {svgIconeCategoria}
                 
-                <h2>{titulo}</h2>
+                <h2 className='h2Home'>{titulo}</h2>
             </Link>
     )
 
